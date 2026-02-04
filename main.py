@@ -1,35 +1,27 @@
 
 import cmd
+# path = r"C:\Users\USER\Documents\Codes\python projs\crypt\New folder\test.txt"
 
-
-# from encryption import Encrypt
-# with open("test.txt") as f:
-#     words = (f.readline())
-# special_key = "potato"
-# secret_word = words
-
-
-# sol = Encrypt(special_key, secret_word)
-# sol.generate_special_key()
-# (sol.encrypt_to_numbers()) #turn the ascii numbers and add more complexity to them
-# (sol.encryption_conversion()) #convert the list to string then to int then divide
-# print(sol.final_encryption()) #need output
-# print(sol.breakdown())
-
-# (sol.decryption_of_list())
-# (sol.list_number_decryption(sol.decryption_of_list()))
-# print(sol.final_decryption()) #need output
 
 class MyCLI(cmd.Cmd):
-    prompt = '[;-)]:'
+    prompt = '(0v0):'
     intro = '''
-/* .-----------------------------------------------------------------------------. */
-/* |      ooooooo8      o      oooooooooo  oooooooooo ooooo       ooooooooooo    | */
-/* |    o888    88     888      888    888  888    888 888         888    88     | */
-/* |    888    oooo   8  88     888oooo88   888oooo88  888         888ooo8       | */
-/* |    888o    88   8oooo88    888  88o    888    888 888      o  888    oo     | */
-/* |     888ooo888 o88o  o888o o888o  88o8 o888ooo888 o888ooooo88 o888ooo8888    | */
-/* '-----------------------------------------------------------------------------' */
+    
+ ██████╗  █████╗ ██████╗ ██████╗ ██╗     ███████╗                                 
+██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║     ██╔════╝                                 
+██║  ███╗███████║██████╔╝██████╔╝██║     █████╗                                   
+██║   ██║██╔══██║██╔══██╗██╔══██╗██║     ██╔══╝                                   
+╚██████╔╝██║  ██║██║  ██║██████╔╝███████╗███████╗                                 
+ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝                                 
+                                                                                  
+███████╗███╗   ██╗ ██████╗██████╗ ██╗   ██╗██████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+██╔════╝████╗  ██║██╔════╝██╔══██╗╚██╗ ██╔╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+█████╗  ██╔██╗ ██║██║     ██████╔╝ ╚████╔╝ ██████╔╝   ██║   ██║██║   ██║██╔██╗ ██║
+██╔══╝  ██║╚██╗██║██║     ██╔══██╗  ╚██╔╝  ██╔═══╝    ██║   ██║██║   ██║██║╚██╗██║
+███████╗██║ ╚████║╚██████╗██║  ██║   ██║   ██║        ██║   ██║╚██████╔╝██║ ╚████║
+╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+                                                                                                                                                                     
+A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW AT YOU SYSTEM :-]
 
 '''
 
@@ -40,8 +32,32 @@ class MyCLI(cmd.Cmd):
     def do_quit(self, line):
         """Exit the CLI."""
         return True
-    
+    def do_garble(self, line):
+        """File encryption"""
+        file_path = "C:\\Users\\Username\\Documents\\example.txt"
+
+        print("When using bargle, make sure to inlcude the file you want to encryp at the very end of the file path. \n" \
+        f"Example would be: '{file_path}'")
+        path = input(r"(0_0):")
+
+        from encryption import Encrypt
+        with open(path, 'r') as f:
+            words = (f.readline())
+        special_key = "potato"
+        secret_word = words
+        sol = Encrypt(special_key, secret_word)
+        sol.generate_special_key()
+        (sol.encrypt_to_numbers()) #turn the ascii numbers and add more complexity to them
+        (sol.encryption_conversion()) #convert the list to string then to int then divide
+        print(sol.final_encryption()) #need output
+
+        (sol.decryption_of_list())
+        (sol.list_number_decryption(sol.decryption_of_list()))
+        print(sol.final_decryption()) #need output
+
+
 
 
 if __name__ == '__main__':
     MyCLI().cmdloop()
+

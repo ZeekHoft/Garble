@@ -128,12 +128,10 @@ class Encrypt:
             
         question = input("Decrypt (Y/N) if N all data will be lost: ").upper()
         if question == "Y":
+            print(self.special_key_storage)
             return (f"DECRYPTED: {' '.join(map(chr, self.store_final_conversion))}")
         
-    def breakdown(self):
-        for i in range(len(self.store_final_conversion)):
-            print(self.store_final_conversion[i])
-
+  
 # sol = Encrypt(special_key, secret_word)
 # sol.generate_special_key()
 # (sol.encrypt_to_numbers()) #turn the ascii numbers and add more complexity to them

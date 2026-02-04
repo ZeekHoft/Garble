@@ -16,7 +16,7 @@ class Decryption:
         
         self.__store_data_D()
     def __store_data_D(self):
-        self.special_key_storage = 0
+        self.special_key_storage = 663
         self.encrypted = [775, 764, 774, 775, 771, 764]
         self.store_final_conversion  = []
         self.limit = 0
@@ -72,19 +72,14 @@ class Decryption:
         for i in range(len(self.store_final_conversion)):
             self.store_final_conversion[i] -= self.special_key_storage
             
-        # question = input("Decrypt (Y/N) if N all data will be lost: ").upper()
-        # if question == "Y":
+        question = input("Decrypt (Y/N) if N all data will be lost: ").upper()
+        if question == "Y":
             return (f"DECRYPTED: {' '.join(map(chr, self.store_final_conversion))}")
-        
-    def breakdown(self):
-        for i in range(len(self.store_final_conversion)):
-            print(self.store_final_conversion[i])
-            print("dddd")
+
 
 sol = Decryption(final_list_encryption,store_encrypted_int, remainder_process)
 (sol.decryption_of_list())
 (sol.list_number_decryption(sol.decryption_of_list()))
 print(sol.final_decryption()) #need output
-print(sol.breakdown())
 
 
