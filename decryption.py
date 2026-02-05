@@ -3,20 +3,22 @@ dictionary_decryption = {'K': '0', 'R': '1', 'B': '2', 'X': '3', 'Z': '4', 'A': 
 
 
 
+
 final_list_encryption = ['6', '9']
-remainder_process = [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 
-0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 
-1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
+# remainder_process = [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 
+# 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 
+# 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
+
+
 store_encrypted_int = 69
 special_key_storage = 663
 encrypted = [747, 767, 768, 778, 695, 768, 778, 695, 760, 695, 778, 764, 762, 777, 764, 779, 695, 772, 764, 778, 778, 760, 766, 764, 695, 765, 777, 774, 772, 695, 781, 768, 773, 762, 764, 721, 695, 775, 774, 779, 760, 779, 774]
 
 
 class Decryption:
-    def __init__(self, final_list_encryption,store_encrypted_int, remainder_process,
+    def __init__(self, final_list_encryption,store_encrypted_int,
                  special_key_storage, encrypted):
         self.final_list_encryption = final_list_encryption
-        self.remainder_process = remainder_process
         self.store_encrypted_int = store_encrypted_int
         self.special_key_storage = special_key_storage
         self.encrypted = encrypted
@@ -24,7 +26,9 @@ class Decryption:
     def __store_data_D(self):
         self.store_final_conversion  = []
         self.limit = 0
+        self.remainder_process = []
 
+        
     def decryption_of_list(self):
         decrypted_list  = []
         for i in self.final_list_encryption:
@@ -45,7 +49,7 @@ class Decryption:
         store_converted = converted_number
     
         #stores all remainder
-        while self.store_encrypted_int > store_converted:
+        while self.store_encrypted_int >= store_converted:
             self.remainder_process.append(self.store_encrypted_int % 2) #appends all remiander 0 and or 1 
             self.store_encrypted_int //= 2
         for r in reversed(self.remainder_process):
@@ -65,7 +69,7 @@ class Decryption:
         # print(store_converted)
         # print(self.final_list_encryption)
         # print((self.store_encrypted_int))
-        # print(self.remainder_process)
+        print(self.remainder_process)
         # print(self.encrypted)
 
         
@@ -78,10 +82,22 @@ class Decryption:
             
         question = input("Decrypt (Y/N) if N all data will be lost: ").upper()
         if question == "Y":
-            return (f"DECRYPTED: {' '.join(map(chr, self.store_final_conversion))}")
+            return (f"DECRYPTED: {''.join(map(chr, self.store_final_conversion))}")
+    
+    
+    # def final_decryption(self):
+    #     decrypted_chars = []
+    #     for val in self.encrypted:
+    #         # Subtract the special key to get the real ASCII value
+    #         char_code = val - self.special_key_storage
+    #         decrypted_chars.append(chr(char_code))
+            
+    #     question = input("Decrypt (Y/N): ").upper()
+    #     if question == "Y":
+    #         return f"DECRYPTED: {''.join(decrypted_chars)}"
 
 
-sol = Decryption(final_list_encryption,store_encrypted_int, remainder_process, special_key_storage, encrypted)
+sol = Decryption(final_list_encryption,store_encrypted_int, special_key_storage, encrypted)
 (sol.decryption_of_list())
 (sol.list_number_decryption(sol.decryption_of_list()))
 print(sol.final_decryption()) #need output

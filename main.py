@@ -5,16 +5,26 @@ import cmd
 # path = r"C:\Users\USER\Documents\Codes\python projs\crypt\New folder\test.txt"
 # C:\Users\OJTVince\Documents\njs front\test.txt
 
+
+
+
 class MyCLI(cmd.Cmd):
 
 
     def __init__(self):
+        self.RED = '\033[91m'
+        self.GREEN = '\033[92m'
+        self.YELLOW = '\033[93m'
+        self.BLUE = '\033[94m'
+        self.CYAN = '\033[96m'
+        self.RESET = '\033[0m'
+
         self.file_path = "C:\\Users\\Username\\Documents\\example.txt"
         self.in_garble = f"""\nWhen using garble, make sure to inlcude the file you want to encryp at the very end of the file path. \nE.G: '{ self.file_path} \n
         """
 
         super().__init__()
-        self.prompt = "(0v0): "
+        self.prompt = f"{self.GREEN}(0v0): {self.RESET}"
         self.intro = '''
  ██████╗  █████╗ ██████╗ ██████╗ ██╗     ███████╗                                 
 ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║     ██╔════╝                                 
@@ -51,7 +61,7 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
         print(f" {self.in_garble}")
         
         try:
-            path = input(rf"(0_0): ") 
+            path = input(rf"{self.RED}(0_0): {self.RESET}") 
             
             with open(path, 'r') as f:
                 words = (f.readline())
@@ -66,9 +76,9 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
             print(value)
             with open(path, "w") as f:
                 f.write(value)
-            (sol.decryption_of_list())
-            (sol.list_number_decryption(sol.decryption_of_list()))
-            print(sol.final_decryption()) #need output
+            # (sol.decryption_of_list())
+            # (sol.list_number_decryption(sol.decryption_of_list()))
+            # print(sol.final_decryption()) #need output
         except FileNotFoundError:
             print(f"Invalid input EXITING. Rerun 'garble' and try a similar file path as this: {self.file_path}")
 
