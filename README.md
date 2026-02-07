@@ -1,5 +1,5 @@
 # Garble Encryption
-```text
+```
  ██████╗  █████╗ ██████╗ ██████╗ ██╗     ███████╗                                   
 ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║     ██╔════╝                                   
 ██║  ███╗███████║██████╔╝██████╔╝██║     █████╗                                     
@@ -14,10 +14,16 @@
 ███████╗██║ ╚████║╚██████╗██║  ██║   ██║   ██║        ██║   ██║╚██████╔╝██║ ╚████║
 ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝                                                                                                                                                       
 A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW AT YOU SYSTEM (0v0):
-
+```
 ### Installation
 Clone the repository to your local machine:
-```bash
+
+```
 git clone [https://github.com/ZeekHoft/Garble.git](https://github.com/ZeekHoft/Garble.git)
+```
+```
 cd Garble
+```
+```
 python main.py
+```
