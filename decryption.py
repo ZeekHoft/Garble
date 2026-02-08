@@ -85,11 +85,13 @@ class Decryption:
     
     def final_decryption(self):
         for val in self.encrypted:
-            char_code = int(val) - int(self.special_key_storage)
-       
+            print((int(val)  ), "gereegefrer")
+
+            char_code = int(self.special_key_storage) - int(val)  
+
             self.decrypted_chars.append(chr(char_code))
-        print(type(self.encrypted))
-        print(type(self.special_key_storage))
+
+
 
         question = input("Decrypt (Y/N) if N all data will be lost: ").upper()
         if question == "Y":
@@ -116,3 +118,10 @@ class Decryption:
 # # (sol.decryption_of_list())
 # # (sol.list_number_decryption(sol.decryption_of_list()))
 # print(sol.final_decryption()) #need output
+
+
+
+def see_type(val1):
+    print(val1)
+    print(type(val1))
+

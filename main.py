@@ -80,8 +80,9 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
             # (sol.list_number_decryption(sol.decryption_of_list()))
             # print(sol.final_decryption()) #need output
         except FileNotFoundError:
-            print(f"Invalid input EXITING. Rerun 'garble' and try a similar file path as this: {self.file_path}")
-
+            print(f"INVALID INPUT EXITING...\n Rerun 'garble' and try a similar file path as this: {self.file_path}")
+        except PermissionError:
+            print(f"PERMISSION DENIED EXITING...\n Rerun 'garble' and try a similar file path as this: {self.file_path}")
 
 if __name__ == '__main__':
     MyCLI().cmdloop()
