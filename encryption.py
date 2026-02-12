@@ -73,7 +73,7 @@ class Encrypt:
             # print(self.encrypted)
             save_user_data(self.final_list_encryption, self.store_encrypted_int,
                         self.special_key_storage, self.encrypted )
-        return(f"ENCRYPTED: {' '.join(self.final_list_encryption)}")
+        return(f"{' '.join(self.final_list_encryption)}")
             
 
     

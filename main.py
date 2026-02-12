@@ -71,6 +71,7 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
             value = (sol.final_encryption()) #need output
             with open(path, "w") as f:
                 f.write(value)
+            print(f"{self.RED}ENCRYPTED FILE{self.RESET}")
             
             # (sol.decryption_of_list())
             # (sol.list_number_decryption(sol.decryption_of_list()))
