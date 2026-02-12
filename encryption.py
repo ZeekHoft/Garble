@@ -65,12 +65,12 @@ class Encrypt:
             pos_1 += 2
             pos_2 += 2
             
-            print("_____________________")
+            # print("_____________________")
+            # # print(self.special_key_storage)
+            # print(self.final_list_encryption)
+            # print(self.store_encrypted_int)
             # print(self.special_key_storage)
-            print(self.final_list_encryption)
-            print(self.store_encrypted_int)
-            print(self.special_key_storage)
-            print(self.encrypted)
+            # print(self.encrypted)
             save_user_data(self.final_list_encryption, self.store_encrypted_int,
                         self.special_key_storage, self.encrypted )
         return(f"ENCRYPTED: {' '.join(self.final_list_encryption)}")
