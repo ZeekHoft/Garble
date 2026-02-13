@@ -61,10 +61,10 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
         
         try:
             path = input(rf"{self.RED}(0_0): {self.RESET}") 
+            special_key = input(f"{self.RED}Enter a special key words/numbers/sentence/special characters\n(0_0): {self.RESET}")  
             
             with open(path, 'r') as f:
                 words = (f.readline())
-            special_key = "potato"
             secret_word = words
             sol = Encrypt(special_key, secret_word)
             sol.generate_special_key()
