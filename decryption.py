@@ -1,3 +1,8 @@
+# import sys
+
+# # Increase the limit for integer <-> string conversion
+# sys.set_int_max_str_digits(20000)
+
 dictionary_encryption = {'0': 'K', '1': 'R', '2': 'B', '3': 'X', '4': 'Z', '5': 'A', '6': 'P', '7': 'M', '8': 'W', '9': 'Q'}
 dictionary_decryption = {'K': '0', 'R': '1', 'B': '2', 'X': '3', 'Z': '4', 'A': '5', 'P': '6', 'M': '7', 'W': '8', 'Q': '9'}
 
@@ -8,10 +13,10 @@ dictionary_decryption = {'K': '0', 'R': '1', 'B': '2', 'X': '3', 'Z': '4', 'A': 
 # 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 
 # 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
 
-final_list_encryption = ['6', '9']
-store_encrypted_int = 69
-special_key_storage = 663
-encrypted = [747, 767, 768, 778, 695, 768, 778, 695, 760, 695, 778, 764, 762, 777, 764, 779, 695, 772, 764, 778, 778, 760, 766, 764, 695, 765, 777, 774, 772, 695, 781, 768, 773, 762, 764, 721, 695, 775, 774, 779, 760, 779, 774]
+# final_list_encryption = ['6', '9']
+# store_encrypted_int = 69
+# special_key_storage = 663
+# encrypted = [747, 767, 768, 778, 695, 768, 778, 695, 760, 695, 778, 764, 762, 777, 764, 779, 695, 772, 764, 778, 778, 760, 766, 764, 695, 765, 777, 774, 772, 695, 781, 768, 773, 762, 764, 721, 695, 775, 774, 779, 760, 779, 774]
 
 
 class Decryption:
@@ -23,11 +28,12 @@ class Decryption:
         self.encrypted = encrypted
         self.__store_data_D()
     def __store_data_D(self):
+        
         self.store_final_conversion  = []
         self.limit = 0
         self.decrypted_chars = []
-
-        
+        self.BLUE = '\033[94m'
+        self.RESET = '\033[0m'
     # def decryption_of_list(self):
     #     decrypted_list  = []
     #     for i in self.final_list_encryption:
@@ -85,17 +91,18 @@ class Decryption:
     
     def final_decryption(self):
         for val in self.encrypted:
-            print((int(val)  ), "gereegefrer")
-
-            char_code = int(self.special_key_storage) - int(val)  
-
+            char_code = int(val) - int(self.special_key_storage)
             self.decrypted_chars.append(chr(char_code))
-
-
-
-        question = input("Decrypt (Y/N) if N all data will be lost: ").upper()
-        if question == "Y":
-            return (f"DECRYPTED: {''.join(self.decrypted_chars)}")
+            
+        path = input(f"{self.BLUE}(-U-): {self.RESET} file directory of the encrypted file:").upper()
+        if not path:
+            return ("Please input the file path of the encrypted file")
+        else:
+            with open(path, "w") as f:
+                f.write(''.join(self.decrypted_chars))
+            return(f"{self.BLUE} DONE CHECK FILE. {self.RESET}")
+                
+            
         
 
 
@@ -120,8 +127,4 @@ class Decryption:
 # print(sol.final_decryption()) #need output
 
 
-
-def see_type(val1):
-    print(val1)
-    print(type(val1))
 

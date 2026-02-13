@@ -1,4 +1,3 @@
-
 import json
 import os
 from pathlib import Path
@@ -25,3 +24,5 @@ def save_user_data(enc_list, enc_int, enc_storage, enc_enc):
         json.dump(data_to_save, f)
 
     print(f"File saved deeply at: {file_path}")
+
+

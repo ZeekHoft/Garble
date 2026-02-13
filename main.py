@@ -1,6 +1,8 @@
+
+
+
 from encryption import Encrypt
-
-
+from dec_head import DecryptHead
 import cmd
 # path = r"C:\Users\USER\Documents\Codes\python projs\crypt\New folder\test.txt"
 # C:\Users\OJTVince\Documents\njs front\test.txt
@@ -13,11 +15,8 @@ class MyCLI(cmd.Cmd):
 
     def __init__(self):
         self.RED = '\033[91m'
-        self.GREEN = '\033[92m'
-        self.YELLOW = '\033[93m'
-        self.BLUE = '\033[94m'
-        self.CYAN = '\033[96m'
         self.RESET = '\033[0m'
+        self.GREEN = '\033[92m'
 
         self.file_path = "C:\\Users\\Username\\Documents\\example.txt"
         self.in_garble = f"""\nWhen using garble, make sure to inlcude the file you want to encryp at the very end of the file path. \nE.G: '{ self.file_path} \n
@@ -73,24 +72,25 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
             (sol.encryption_conversion()) #convert the list to string then to int then divide
          
             value = (sol.final_encryption()) #need output
-            print(value)
             with open(path, "w") as f:
                 f.write(value)
+            print(f"{self.RED}ENCRYPTED FILE{self.RESET}")
+            
             # (sol.decryption_of_list())
             # (sol.list_number_decryption(sol.decryption_of_list()))
             # print(sol.final_decryption()) #need output
         except FileNotFoundError:
-            print(f"INVALID INPUT EXITING...\n Rerun 'garble' and try a similar file path as this: {self.file_path}")
-        except PermissionError:
-            print(f"PERMISSION DENIED EXITING...\n Rerun 'garble' and try a similar file path as this: {self.file_path}")
+            print(f"Invalid input EXITING. Rerun 'garble' and try a similar file path as this: {self.file_path}")
 
+    def do_ungarble(self, line):
+        """File Decryption"""
+        try:
+            sol = DecryptHead()
+            sol.decrypt_head()
+        except Exception as e:
+            print(f"ERROR: {e}")
+
+    
+        
 if __name__ == '__main__':
     MyCLI().cmdloop()
-
-
-
-
-
-
-
-
