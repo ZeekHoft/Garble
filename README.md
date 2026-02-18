@@ -25,6 +25,11 @@ git clone [https://github.com/ZeekHoft/Garble.git](https://github.com/ZeekHoft/G
 cd Garble
 ```
 ```
+pip install requirements.txt
+or
+python -m pip install requirements.txt
+```
+```
 python main.py
 ```
 
