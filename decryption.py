@@ -20,12 +20,15 @@ dictionary_decryption = {'K': '0', 'R': '1', 'B': '2', 'X': '3', 'Z': '4', 'A': 
 
 
 class Decryption:
-    def __init__(self, final_list_encryption,store_encrypted_int,
-                 special_key_storage, encrypted):
+    def __init__(self, final_list_encryption,
+                 store_encrypted_int,
+                 special_key_storage, encrypted,
+                 specialKey):
         self.final_list_encryption = final_list_encryption
         self.store_encrypted_int = store_encrypted_int
         self.special_key_storage = special_key_storage
         self.encrypted = encrypted
+        self.specialKey = specialKey
         self.__store_data_D()
     def __store_data_D(self):
         
@@ -94,15 +97,23 @@ class Decryption:
             char_code = int(val) - int(self.special_key_storage)
             self.decrypted_chars.append(chr(char_code))
             
-        path = input(f"{self.BLUE}(-U-): {self.RESET} file directory of the encrypted file:").upper()
+        path = input(f"{self.BLUE}file directory of the encrypted file\n(-U-): {self.RESET} ").upper()
         if not path:
             return ("Please input the file path of the encrypted file")
         else:
-            with open(path, "w") as f:
-                f.write(''.join(self.decrypted_chars))
-            return(f"{self.BLUE} DONE CHECK FILE. {self.RESET}")
-                
+            secret = input(f"{self.BLUE}secret key\n(-U-): {self.RESET}")
+            seperate = secret.split()
+            if self.specialKey in seperate:
+                with open(path, "w") as f:
+                    f.write(''.join(self.decrypted_chars))
+                return(f"{self.BLUE} DONE CHECK FILE (-U-) {self.RESET}")
+         
+            else:
+                return ("INVALID KEY")
+
+           
             
+           
         
 
 

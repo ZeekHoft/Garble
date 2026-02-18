@@ -3,7 +3,7 @@
 
 from encryption import Encrypt
 from dec_head import DecryptHead
-from save import SaveData
+# from save import SaveData
 
 import cmd
 # path = r"C:\Users\USER\Documents\Codes\python projs\crypt\New folder\test.txt"
@@ -12,7 +12,7 @@ import cmd
 
 
 
-class MyCLI(cmd.Cmd):
+class  GarbleCLI(cmd.Cmd):
 
 
     def __init__(self):
@@ -84,22 +84,29 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
             with open(path, "w") as f:
                 f.write(value)
             print(f"{self.RED}ENCRYPTED FILE{self.RESET}")
+            return True
+
             
             # (sol.decryption_of_list())
             # (sol.list_number_decryption(sol.decryption_of_list()))
             # print(sol.final_decryption()) #need output
         except FileNotFoundError:
             print(f"Invalid input EXITING. Rerun 'garble' and try a similar file path as this: {self.file_path}")
+            return True
 
     def do_ungarble(self, line):
         """File Decryption"""
         try:
             sol = DecryptHead()
             sol.decrypt_head()
+            return True
+
         except Exception as e:
             print(f"ERROR: {e}")
+            return True
+
 
     
         
 if __name__ == '__main__':
-    MyCLI().cmdloop()
+     GarbleCLI().cmdloop()
