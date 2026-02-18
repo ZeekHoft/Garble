@@ -1,5 +1,7 @@
 # import sys
-
+import colorama
+from colorama import Fore, Style
+colorama.init(autoreset=True)
 # # Increase the limit for integer <-> string conversion
 # sys.set_int_max_str_digits(20000)
 
@@ -35,8 +37,8 @@ class Decryption:
         self.store_final_conversion  = []
         self.limit = 0
         self.decrypted_chars = []
-        self.BLUE = '\033[94m'
-        self.RESET = '\033[0m'
+        self.BLUE = Fore.BLUE
+        self.RESET = Style.RESET_ALL
     # def decryption_of_list(self):
     #     decrypted_list  = []
     #     for i in self.final_list_encryption:

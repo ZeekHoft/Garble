@@ -4,6 +4,11 @@
 from encryption import Encrypt
 from dec_head import DecryptHead
 # from save import SaveData
+import colorama
+from colorama import Fore, Style
+# This line is the magic trick that makes colors work on Windows
+colorama.init(autoreset=True)
+
 
 import cmd
 # path = r"C:\Users\USER\Documents\Codes\python projs\crypt\New folder\test.txt"
@@ -16,9 +21,9 @@ class  GarbleCLI(cmd.Cmd):
 
 
     def __init__(self):
-        self.RED = '\033[91m'
-        self.RESET = '\033[0m'
-        self.GREEN = '\033[92m'
+        self.RED = Fore.RED
+        self.GREEN = Fore.GREEN
+        self.RESET = Style.RESET_ALL
 
         self.file_path = "C:\\Users\\Username\\Documents\\example.txt"
         self.in_garble = f"""\nWhen using garble, make sure to inlcude the file you want to encryp at the very end of the file path. \nE.G: '{ self.file_path} \n
