@@ -3,6 +3,8 @@
 
 from encryption import Encrypt
 from dec_head import DecryptHead
+from save import SaveData
+
 import cmd
 # path = r"C:\Users\USER\Documents\Codes\python projs\crypt\New folder\test.txt"
 # C:\Users\Documents\njs front\test.txt
@@ -60,9 +62,15 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
         print(f" {self.in_garble}")
         
         try:
-            path = input(rf"{self.RED}(0_0): {self.RESET}") 
+            path = input(rf"{self.RED}(0_0): {self.RESET}")
+            if not path:
+                print(f"{self.RED}Error: Path cannot be empty.{self.RESET}")
+                return self.do_garble(line)
             
             special_key = input(f"{self.RED}Enter a special key words/numbers/sentence/special characters\n(0_0): {self.RESET}")  
+            if not special_key:
+                print(f"{self.RED}Error: Special Key cannot be empty.{self.RESET}")
+                return self.do_garble(line)
             
             with open(path, 'r') as f:
                 words = (f.readline())

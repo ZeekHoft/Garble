@@ -1,11 +1,10 @@
 dictionary_encryption = {'0': 'K', '1': 'R', '2': 'B', '3': 'X', '4': 'Z', '5': 'A', '6': 'P', '7': 'M', '8': 'W', '9': 'Q'}
 dictionary_decryption = {'K': '0', 'R': '1', 'B': '2', 'X': '3', 'Z': '4', 'A': '5', 'P': '6', 'M': '7', 'W': '8', 'Q': '9'}
 
-from save import save_user_data
 # special_key = input("What will be the secret key (secret key, peacock, lions main): ")
 # secret_word = input("What message would you like encrypted:  ")
 
-
+from save import save_user_data
 class Encrypt:
     # store all variables that can be accessible on every function
     def __init__(self, special_key, encrypt_word):
@@ -71,8 +70,10 @@ class Encrypt:
             # print(self.store_encrypted_int)
             # print(self.special_key_storage)
             # print(self.encrypted)
-            save_user_data(self.final_list_encryption, self.store_encrypted_int,
-                        self.special_key_storage, self.encrypted )
+            save_user_data(self.final_list_encryption,
+                                self.store_encrypted_int,
+                                self.special_key_storage,
+                                self.encrypted )
         return(' '.join(self.final_list_encryption))
             
 
