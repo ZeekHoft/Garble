@@ -73,7 +73,8 @@ class Encrypt:
             save_user_data(self.final_list_encryption,
                                 self.store_encrypted_int,
                                 self.special_key_storage,
-                                self.encrypted )
+                                self.encrypted,
+                                self.special_key )
         return(' '.join(self.final_list_encryption))
             
 

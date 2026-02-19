@@ -20,7 +20,8 @@ from pathlib import Path
 def save_user_data( enc_list,
                 enc_int,
                 enc_storage,
-                enc_enc):
+                enc_enc,
+                special_key):
     app_dir = Path(os.getenv('LOCALAPPDATA')) / "garble"
 
     # Create the directory if it doesn't exist
@@ -34,6 +35,7 @@ def save_user_data( enc_list,
         "special_key_storage": enc_storage,
         "encrypted": enc_enc,
         "secret_pat": string_path,
+        "special_key": special_key
         
     }
 
@@ -41,5 +43,5 @@ def save_user_data( enc_list,
     with open(file_path, 'w') as f:
         json.dump(data_to_save, f)
 
-    print(f"File saved deeply asssssssssst: {string_path}")
+    # print(f"File saved deeply asssssssssst: {string_path}")
 
