@@ -18,6 +18,10 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
 THE DECRYPTION ONLY WORKS ON THE SYSTEM IT'S BEING ENCRYPTED ON BECAUSE WITHIN THE CODE SOME OF THE DATA BEING STORED IS WITHIN YOUR SYSTEM, BURRIED DEEP DOWN YOUR SYSTEM
 
 ```
+### Sample View
+<img width="1389" height="799" alt="Screenshot 2026-03-10 062157" src="https://github.com/user-attachments/assets/aee2b740-0f75-44f2-90b6-8ef588850b0d" />
+
+
 ### Installation
 Clone the repository to your local machine:
 
@@ -28,12 +32,10 @@ git clone [https://github.com/ZeekHoft/Garble.git](https://github.com/ZeekHoft/G
 cd Garble
 ```
 ```
-pip install -r requirements.txt
-or
-python -m pip install -r requirements.txt
+pip install textual
 ```
 ```
-python main.py
+python test.py
 ```
 
 ## How to use
@@ -42,21 +44,20 @@ python main.py
 - **Start the app:**
 
 ```
-python main.py
+python test.py
 ```
 
-- **Encrypt a file:**
-	1. In the interactive prompt type `garble` and press Enter.
-	2. When asked, enter the full path to the file you want to encrypt (include the filename at the end of the path).
-	3. The tool reads the file, encrypts its contents, and overwrites the file with the encrypted output. Example input prompt:
+- **Encrypt a file (Garble):**
+	1. In the Textual interface, input the absolute path to your file (e.g., `C:\path\to\your\file.txt`).
+	2. Input your desired special key.
+	3. Click the `Encrypt (Garble)` button or navigate to it and press Enter. The tool reads the file, encrypts its contents, and overwrites the file with the encrypted output. 
+	4. A success message will appear in the system log below.
 
-```
-(0_0): C:\path\to\your\file.txt
-```
-
-- **Decrypt a file:**
-	1. In the interactive prompt type `ungarble` and press Enter.
-	2. Follow any prompts shown by the tool to complete decryption.
+- **Decrypt a file (Ungarble):**
+	1. In the Textual interface, input the absolute path to your file (e.g., `C:\path\to\your\file.txt`).
+	2. Input the special key you used previously.
+	3. Click the `Decrypt (Ungarble)` button. 
+    4. The decrypted result will be printed out in the system log.
 
 - **Notes & safety:**
 	- Always keep backups; encryption will overwrite the original file.

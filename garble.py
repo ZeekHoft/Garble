@@ -60,7 +60,7 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
     def do_quit(self, line):
         """Exit the CLI."""
         return True
-    def do_garble(self, line):
+    def do_garble(self, line, user_input: str) -> str:
         """File encryption"""
         
 
@@ -70,12 +70,12 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
             path = input(rf"{self.RED}(0_0): {self.RESET}")
             if not path:
                 print(f"{self.RED}Error: Path cannot be empty.{self.RESET}")
-                return self.do_garble(line)
+                return 
             
             special_key = input(f"{self.RED}Enter a special key words/numbers/sentence/special characters\n(0_0): {self.RESET}")  
             if not special_key:
                 print(f"{self.RED}Error: Special Key cannot be empty.{self.RESET}")
-                return self.do_garble(line)
+                return 
             
             with open(path, 'r') as f:
                 words = (f.readline())
@@ -89,26 +89,21 @@ A CLI TOOL MADE FOR ENCRYPTING FILE CREATED BY ZEEKHOFT AS A SIMPLE PROJECT NOW 
             with open(path, "w") as f:
                 f.write(value)
             print(f"{self.RED}ENCRYPTED FILE{self.RESET}")
-            return True
-
-            
-            # (sol.decryption_of_list())
-            # (sol.list_number_decryption(sol.decryption_of_list()))
-            # print(sol.final_decryption()) #need output
+            return 
         except FileNotFoundError:
             print(f"Invalid input EXITING. Rerun 'garble' and try a similar file path as this: {self.file_path}")
-            return True
+            return 
 
     def do_ungarble(self, line):
         """File Decryption"""
         try:
             sol = DecryptHead()
             sol.decrypt_head()
-            return True
+            return 
 
         except Exception as e:
             print(f"ERROR: {e}")
-            return True
+            return 
 
 
     

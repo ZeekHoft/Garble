@@ -39,61 +39,7 @@ class Decryption:
         self.decrypted_chars = []
         self.BLUE = Fore.BLUE
         self.RESET = Style.RESET_ALL
-    # def decryption_of_list(self):
-    #     decrypted_list  = []
-    #     for i in self.final_list_encryption:
-            
-    #         if i not in dictionary_decryption.keys():
-    #             decrypted_list.append(i)
-               
 
-    #         else:
-    #             value = dictionary_decryption[i]
-    #             decrypted_list.append(value)
-    #     return([int(x) for x in decrypted_list])
-        
-
-
-    # def list_number_decryption(self, list_num):
-    #     converted_number = int(''.join([str(i) for i in list_num]))
-    #     store_converted = converted_number
-    
-    #     #stores all remainder
-    #     while self.store_encrypted_int >= store_converted:
-    #         self.remainder_process.append(self.store_encrypted_int % 2) #appends all remiander 0 and or 1 
-    #         self.store_encrypted_int //= 2
-    #     for r in reversed(self.remainder_process):
-            
-    #         store_converted = store_converted * 2 + r #adds remainders here
-
-    #     #self.encryption has the right amount always so i need to gets one of its index 0, and get its len as reference
-    #     convert_length = list(map(str, self.encrypted))
-    #     for lengths in convert_length[0]:
-    #         self.limit += len(lengths)
-
-
-    #     conversion_store = str(store_converted)
-    #     final_seperation = [(conversion_store)[i:i+self.limit] for i in range(0, len(conversion_store), self.limit)]
-    #     self.store_final_conversion = [int(x) for x in final_seperation]
-    #     # print("_____________________")
-    #     # print(store_converted)
-    #     # print(self.final_list_encryption)
-    #     # print((self.store_encrypted_int))
-    #     print(self.remainder_process)
-    #     # print(self.encrypted)
-
-        
-
-
-            
-    # def final_decryption(self):
-    #     for i in range(len(self.store_final_conversion)):
-    #         self.store_final_conversion[i] -= self.special_key_storage
-            
-    #     question = input("Decrypt (Y/N) if N all data will be lost: ").upper()
-    #     if question == "Y":
-    #         return (f"DECRYPTED: {''.join(map(chr, self.store_final_conversion))}")
-    
     def final_decryption(self):
         for val in self.encrypted:
             char_code = int(val) - int(self.special_key_storage)
@@ -113,26 +59,22 @@ class Decryption:
             else:
                 return ("INVALID KEY")
 
-           
-            
-           
-        
+    def gui_decryption(self, target_path, secret):
+        for val in self.encrypted:
+            char_code = int(val) - int(self.special_key_storage)
+            self.decrypted_chars.append(chr(char_code))
 
-
-
-
-        
-    # def final_decryption(self):
-    #     decrypted_chars = []
-    #     for val in self.encrypted:
-    #         # Subtract the special key to get the real ASCII value
-    #         char_code = val - self.special_key_storage
-    #         decrypted_chars.append(chr(char_code))
-            
-    #     question = input("Decrypt (Y/N): ").upper()
-    #     if question == "Y":
-    #         return f"DECRYPTED: {''.join(decrypted_chars)}"
-
+        if not target_path:
+            return "Please input the file path of the encrypted file"
+        else:
+            seperate = secret.split()
+            if self.specialKey in seperate:
+                with open(target_path, "w") as f:
+                    f.write(''.join(self.decrypted_chars))
+                return "DONE CHECK FILE (-U-)"
+            else:
+                return "INVALID KEY"
+    
 
 # sol = Decryption(final_list_encryption,store_encrypted_int, special_key_storage, encrypted)
 # # (sol.decryption_of_list())
